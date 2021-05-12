@@ -1,0 +1,132 @@
+multiply:
+	y = getparam 1
+	x = getparam 1
+
+	param x
+	param y
+	v0 = call con0, 2
+	if v0 && v1 goto test1
+
+	param y
+	v1 = call con1, 1
+	minus_sign = true
+	x = -x
+
+	param y
+	v2 = call con2, 1
+
+	param x
+	v3 = call con3, 1
+	minus_sign = true
+	y = -y
+
+	param x
+	v4 = call con4, 1
+
+	param y
+	v5 = call con5, 1
+	minus_sign = false
+	x = -x
+	y = -y
+	minus_sign = false
+	result = 0
+
+	param y
+	v6 = call con6, 1
+	t0 = x + x
+	t1 = y - 1
+
+	param minus_sign
+	param true
+	v7 = call con7, 2
+	if v0 && v1 goto test1
+main:
+	five = 5
+	t2 = 1 + 1
+	t3 = 1 + t2
+	param arg_2
+	param arg_1
+con0:
+	x = getparam 0
+	y = getparam 1
+	If x < y goto v1
+	goto v2
+	v1:
+		return true
+	v2:
+		return false
+con0:
+	x = getparam 0
+	y = getparam 1
+	If x < y goto v1
+	goto v2
+	v1:
+		return true
+	v2:
+		return false
+con1:
+	y = getparam 0
+	If y >= 0 goto v1
+	goto v2
+	v1:
+		return true
+	v2:
+		return false
+con2:
+	y = getparam 0
+	If y < 0 goto v1
+	goto v2
+	v1:
+		return true
+	v2:
+		return false
+con3:
+	x = getparam 0
+	If x >= 0 goto v1
+	goto v2
+	v1:
+		return true
+	v2:
+		return false
+con4:
+	x = getparam 0
+	If x < 0 goto v1
+	goto v2
+	v1:
+		return true
+	v2:
+		return false
+con5:
+	y = getparam 0
+	If y < 0 goto v1
+	goto v2
+	v1:
+		return true
+	v2:
+		return false
+con6:
+	y = getparam 0
+	If y > 0 goto v1
+	goto v2
+	v1:
+		return true
+	v2:
+		return false
+con7:
+	minus_sign = getparam 0
+	true = getparam 1
+	If minus_sign = true goto v1
+	goto v2
+	v1:
+		return true
+	v2:
+		return false
+con7:
+	minus_sign = getparam 0
+	true = getparam 1
+	If minus_sign = true goto v1
+	goto v2
+	v1:
+		return true
+	v2:
+		return false
